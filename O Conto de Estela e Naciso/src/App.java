@@ -16,10 +16,11 @@ public class App {
         System.out.println("-" + escolhaA1);
         System.out.println("-" + escolhaA2);
 
+        System.out.println("\nO que pensar?\n");
         Scanner escaneador = new Scanner(System.in); //capturar a entrada do usuário com a variável do tipo Scanner que se chama escaneador
-        String escolha1 = escaneador.nextLine(); //capturar o que o usuário escolheu/escrevu
+        String escolha1 = escaneador.nextLine(); //capturar o que o usuário escolheu/escreveu
 
-        if (escolha1.equals(escolhaA1)){ //comparando a escolha
+        if (escolha1.equals(escolhaA1)){ //comparando a escolha      
             System.out.println("\nApesar de querer ir além\n" +
             "Recordo como da paixão é ser refém\n" +
             "E da promessa de me entregar a ninguém\n" +
@@ -37,11 +38,12 @@ public class App {
             System.out.println(textoCapituloB);
             System.out.println("-" + escolhaB1);
             System.out.println("-" + escolhaB2);
-
+           
+            System.out.println("\nO que pensar?\n");
             escaneador = new Scanner(System.in); //capturar a entrada do usuário com a variável do tipo Scanner que se chama escaneador
             String escolha2 = escaneador.nextLine(); 
 
-            if (escolha2.equals(escolhaB1)){
+            if (escolha2.equals(escolhaB1)){              
                 System.out.println("\nEssa reflexão me lembrou Caetano\n" +
                 "E ele me lembrou que me encontrar ainda estou tentando\n" +
                 "Então passado alguns segundo me peguei cogitando\n" +
@@ -54,7 +56,12 @@ public class App {
                 "Até que ouvi gritarem um nome\n" +
                 "Estela\n\n");
             }
-        escaneador.close();
+            
+        else{
+            System.out.println("Opção incorreta");
         }
+    escaneador.close();
     }
 }
+}
+
