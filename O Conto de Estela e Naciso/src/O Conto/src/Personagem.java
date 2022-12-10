@@ -7,7 +7,7 @@ Personagem(String nome, int coragem){
     this.coragem = coragem;
 }
 
-void alterarEsperanca(int alteracao){
+void alterarCoragem(int alteracao){
     this.coragem += alteracao;
 
     if (this.coragem > 100){
@@ -16,14 +16,14 @@ void alterarEsperanca(int alteracao){
 
     if (this.coragem < 0){
         this.coragem = 0;
-        System.out.println(this.nome + "perdeu toda a sua coragem");
+        System.out.println(this.nome + " perdeu toda a sua coragem\n");
     }
 
     if (this.coragem > 0){
-        System.out.println(this.nome + "ganhou" + alteracao + "de coragem");
+        System.out.println(this.nome + " ganhou " + alteracao + " de coragem\n");
     }
-    else {
-        System.out.println(this.nome + "perdeu coragem");
-    }
+    //else {
+    // System.out.println(this.nome + " perdeu coragem\n");
+    //}
 }
 }

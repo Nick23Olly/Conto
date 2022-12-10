@@ -32,11 +32,13 @@ public class App {
         "Até que ouvi gritarem um nome\n" +
         "Estela\n";
 
-        
+        Personagem Narciso = new Personagem ("Narciso",100);
+        Personagem Estela = new Personagem ("Estela", 100);
 
         System.out.println(titulo);
         System.out.println("______________________________________\n\n");
         System.out.println(textocapA);
+        Narciso.alterarCoragem(100);
         System.out.println("-" + escolhaA1);
         System.out.println("-" + escolhaA2);
         System.out.println(resposta);
@@ -45,11 +47,13 @@ public class App {
         String escolha1 = escaneador.nextLine(); //capturar o que o usuário escolheu/escreveu
 
         if (escolha1.equals(escolhaA1)){ //comparando a escolha      
-            System.out.println(textocapB1);   
+            System.out.println(textocapB1);
+            Narciso.alterarCoragem(-101);  
         }
 
         else if (escolha1.equals(escolhaA2)){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
             System.out.println(textocapB2);
+            Narciso.alterarCoragem(15);
             System.out.println("-" + escolhaB2_1);
             System.out.println("-" + escolhaB2_2);
             System.out.println(resposta);
@@ -57,19 +61,20 @@ public class App {
             escaneador = new Scanner(System.in); //capturar a entrada do usuário com a variável do tipo Scanner que se chama escaneador
             String escolha2 = escaneador.nextLine(); 
 
-            if (escolha2.equals(escolhaB2_1)){              
+            if (escolha2.equals(escolhaB2_1)){        
                 System.out.println(textocapC1);
+                Narciso.alterarCoragem(-101);
             }
-            else if (escolha2.equals(escolhaB2_2)){
+            else if(escolha2.equals(escolhaB2_2)){
                 System.out.println(textocapC2);
+                Narciso.alterarCoragem(15);
+                Estela.alterarCoragem(100);
             }
-            
+            }
+
         else{
             System.out.println("Opção incorreta");
         }
     escaneador.close();
-    }
 }
 }
-
-
