@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        Scanner escaneador = new Scanner (System.in);
+
         Personagem Narciso = new Personagem ("Narciso",100);
         Personagem Estela = new Personagem ("Estela", 100);
 
@@ -15,11 +17,12 @@ public class App {
             0,
             "\nO que pensar?\n", 
             "nao existe um porem", 
-            "prosseguir e ir alem\n");
+            "prosseguir e ir alem",
+            escaneador); //passando o escaneador como parâmetro para todos os capítulos
 
         capitulo capB1 = new capitulo(
-            "\nTRAUMAS", 
-            "\nApesar de querer ir além\n" +
+            "TRAUMAS", 
+            "Apesar de querer ir além\n" +
             "Recordo como da paixão é ser refém\n" +
             "E da promessa de me entregar a ninguém\n" +
             "Resolvi fazer jus e esquecer de um provável porém\n", 
@@ -27,11 +30,12 @@ public class App {
             -100,
             null,
             null,
-            null); //passando o parâmetro como nulo
+            null, //passando o parâmetro como nulo
+            escaneador);
 
         capitulo capB2 = new capitulo(
-            "\nLISBELA E O PRISIONEIRO", 
-            "\nEla era bela\n" +
+            "LISBELA E O PRISIONEIRO", 
+            "Ela era bela\n" +
             "Tão bela quanto a energia dela\n" +
             "Mesmo à distância sentia sua confiança\n" + 
             "E o sorriso, ah…\\n" +
@@ -40,11 +44,12 @@ public class App {
             15,
             "\nO que pensar?\n", 
             "a vida não e uma novela", 
-            "quem e ela?\n");
+            "quem e ela?",
+            escaneador);
          
         capitulo capC1 = new capitulo(
-            "\n CAETANO ME AVISOU", 
-            "\nEssa reflexão me lembrou Caetano\n" +
+            "CAETANO ME AVISOU", 
+            "Essa reflexão me lembrou Caetano\n" +
             "E ele me lembrou que me encontrar ainda estou tentando\n" +
             "Então passado alguns segundo me peguei cogitando\n" +
             "Talvez a melhor opção seja seguir SOZINHO o meu plano\n", 
@@ -52,11 +57,12 @@ public class App {
             -100, 
             null, 
             null,
-            null);
+            null,
+            escaneador);
 
         capitulo capC2 = new capitulo(
-            "\nQUEM É ELA", 
-            "\nE como diria Baco\n" + 
+            "QUEM É ELA", 
+            "E como diria Baco\n" + 
             "\n\"Quem é ela? Quem é ela?\"\n" +
             "Reflexivo acendi um cigarro\n" +
             "Até que ouvi gritarem um nome\n" +
@@ -65,34 +71,31 @@ public class App {
             15, 
             null, 
             null, 
-            null);
+            null,
+            escaneador);
     
         capA.mostrar();
+        int escolha = capA.escolher(); //guada a escolha na variável de tipo int
 
-        Scanner escaneador = new Scanner(System.in); //capturar a entrada do usuário com a variável do tipo Scanner que se chama escaneador
-        String escolha1 = escaneador.nextLine(); //capturar o que o usuário escolheu/escreveu
-
-        if (escolha1.equals(capA.escolha1)){ //comparando a escolha      
+        if (escolha == 1){ //comparando a escolha      
             capB1.mostrar();  
         }
 
-        else if (escolha1.equals(capA.escolha2)){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
+        else if (escolha == 2){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
             capB2.mostrar();
+            escolha2 = capB2.escolher(); 
 
-            escaneador = new Scanner(System.in); //capturar a entrada do usuário com a variável do tipo Scanner que se chama escaneador
-            String escolha2 = escaneador.nextLine(); 
-
-            if (escolha2.equals(capB2.escolha1)){        
+            if (escolha2 == 1){        
                 capC1.mostrar();
             }
-            else if(escolha2.equals(capB2.escolha2)){
+            else if(escolha2 == 2){
                 capC2.mostrar();
             }
             }
 
         else{
-            System.out.println("Opção incorreta");
+            System.out.println("\nOpção incorreta");
         }
-    escaneador.close();
+        escaneador.close();
 }
 }
